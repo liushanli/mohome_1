@@ -1,0 +1,272 @@
+{
+    "name" : "摩之家",
+    "appid" : "__UNI__E620529",
+    "description" : "",
+    "versionName" : "1.2.1",
+    "versionCode" : 129,
+    "transformPx" : false,
+    /* 5+App特有相关 */
+    "app-plus" : {
+        "compatible" : {
+            "ignoreVersion" : true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持  
+        },
+        "usingComponents" : true,
+        "nvueCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : false,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        "useragent" : {
+            "value" : "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2",
+            "concatenate" : true
+        },
+        "useragent_ios" : {
+            "value" : "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2",
+            "concatenate" : true
+        },
+        "useragent_android" : {
+            "value" : "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.57.2 (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2",
+            "concatenate" : true
+        },
+        /* 模块配置 */
+        "modules" : {
+            "Payment" : {},
+            "iBeacon" : {},
+            "Geolocation" : {},
+            "OAuth" : {},
+            "Share" : {},
+            "VideoPlayer" : {},
+            "Maps" : {}
+        },
+        "privacy" : {
+            "prompt" : "template",
+            "template" : {
+                "version" : "1",
+                "title" : "服务协议和隐私政策",
+                "message" : "请你务必审慎阅读、充分理解<a href='http://www.shhaoyuanjk.com:9000/subscriber.html'>《用户协议》</a>和<a href='http://shmzj.shhaoyuanjk.com/ysxys.html'>《隐私政策》</a>各条款，包括但不限于：为了更好的向你提供服务，我们需要可能要收集你的位置信息和设备标识等信息用于分析、优化应用性能。<br/>如果你同意，请点击 ''同意''开始接受我们的服务。",
+                "buttonAccept" : "同意并接受",
+                "buttonRefuse" : "拒绝",
+                "hrefLoader" : "system",
+                "second" : {
+                    "title" : "确认提示",
+                    "message" : "　　进入应用前，你需先同意<a href='http://www.shhaoyuanjk.com:9000/subscriber.html'>《用户协议》</a>和<a href='http://shmzj.shhaoyuanjk.com/ysxys.html'>《隐私政策》</a>，否则将退出应用。",
+                    "buttonAccept" : "同意并继续",
+                    "buttonRefuse" : "拒绝"
+                },
+                "styles" : {
+                    "backgroundColor" : "#00FF00",
+                    "borderRadius" : "5px",
+                    "title" : {
+                        "color" : "#ff00ff"
+                    },
+                    "buttonAccept" : {
+                        "color" : "#ffff00"
+                    },
+                    "buttonRefuse" : {
+                        "color" : "#00ffff"
+                    }
+                }
+            }
+        },
+        /* 应用发布信息 */
+        "distribute" : {
+            /* android打包配置 */
+            "android" : {
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a" ],
+                "autoSdkPermissions" : true,
+                "permissionExternalStorage" : {
+                    "request" : "once",
+                    "prompt" : "'摩之家'应用保存运行状态等信息，需要获取读写手机存储（系统提示为访问设备上的照片、媒体内容和文件）权限，请允许。"
+                },
+                "permissionPhoneState" : {
+                    "request" : "once",
+                    "prompt" : "'摩之家'为保证您正常、安全地使用，需要获取设备识别码（部分手机提示为获取手机号码）使用权限，请允许。"
+                },
+                "schemes" : "www.shhaoyuanjk.com"
+            },
+            /* ios打包配置 */
+            "ios" : {
+                "idfa" : false,
+                "apple" : {
+                    "plistcmds" : [
+                        "Set :NSMicrophoneUsageDescription '摩之家'需要获取你麦克风的权限，以便让您和商家语音交互",
+                        "Set :NSPhotoLibraryUsageDescription '摩之家'需要获取你相册的权限，您可以在'摩之家技师端'平台上上传您的照片以及评价功能",
+                        "Set :NSCameraUsageDescription '摩之家'需要获取你摄像头的权限，您可以使用摄像头来完成拍照，扫码识别的功能",
+                        "Set :NSPhotoLibraryAddUsageDescription '摩之家'需要获取你相册的权限，您可以在'摩之家技师端'平台上上传您的照片以及评价功能",
+                        "Set :NSLocationAlwaysUsageDescription '摩之家’需要获取你定位的权限，以便为你推荐周边的生活服务，无需在手动输入所在的地理位置",
+                        "Set :NSLocationWhenInUseUsageDescription '摩之家’需要获取你定位的权限，以便为你推荐周边的生活服务，无需在手动输入所在的地理位置",
+                        "Set :NSLocationAlwaysAndWhenInUseUsageDescription '摩之家’需要获取你定位的权限，以便为你推荐周边的生活服务，无需在手动输入所在的地理位置",
+                        "Set :NSLocalNetworkUsageDescription '摩之家'可能会同时需要包含你无线网和数据网的权限，以便给你提供数据展示的信息"
+                    ]
+                },
+                "urltypes" : "www.shhaoyuanjk.com",
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "'摩之家'需要获取你相册的权限，您可以在'摩之家技师端'平台上上传您的照片以及评价功能",
+                    "NSLocationWhenInUseUsageDescription" : "'摩之家’需要获取你定位的权限，以便为你推荐周边的生活服务，无需在手动输入所在的地理位置",
+                    "NSLocationAlwaysUsageDescription" : "'摩之家’需要获取你定位的权限，以便为你推荐周边的生活服务，无需在手动输入所在的地理位置",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "'摩之家’需要获取你定位的权限，以便为你推荐周边的生活服务，无需在手动输入所在的地理位置",
+                    "NSPhotoLibraryAddUsageDescription" : "'摩之家'需要获取你相册的权限，您可以在'摩之家技师端'平台上上传您的照片以及评价功能",
+                    "NSCameraUsageDescription" : "'摩之家'需要获取你摄像头的权限，您可以使用摄像头来完成拍照，扫码识别的功能",
+                    "NSMicrophoneUsageDescription" : "'摩之家'需要获取你麦克风的权限，以便让您和商家语音交互",
+                    "NSLocalNetworkUsageDescription" : "'摩之家'可能会同时需要包含你无线网和数据网的权限，以便给你提供数据展示的信息"
+                }
+            },
+            /* SDK配置 */
+            "sdkConfigs" : {
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "60d58c1c87479dbe30c2649e7bc0c477",
+                        "appkey_android" : "bbc50621f716f8069f90c9cd17cb959b"
+                    }
+                },
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "wxd12662088d58aa45",
+                        "appsecret" : "e9669ee54cf57a93eb02f68d33489bcc",
+                        "UniversalLinks" : "https://com.app.mozhijia/"
+                    },
+                    "apple" : {},
+                    "univerify" : {}
+                },
+                "apple" : {},
+                "payment" : {
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    },
+                    "weixin" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appid" : "wxd12662088d58aa45",
+                        "UniversalLinks" : "https://com.app.mozhijia/"
+                    },
+                    "appleiap" : {}
+                },
+                "ad" : {},
+                "geolocation" : {
+                    "amap" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appkey_ios" : "60d58c1c87479dbe30c2649e7bc0c477",
+                        "appkey_android" : "bbc50621f716f8069f90c9cd17cb959b"
+                    }
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wxd12662088d58aa45",
+                        "UniversalLinks" : "https://com.app.mozhijia/"
+                    }
+                },
+                "push" : {
+                    "unipush" : {}
+                }
+            },
+            "splashscreen" : {
+                "androidStyle" : "default",
+                "iosStyle" : "common",
+                "android" : {
+                    "hdpi" : "static/images/1.png",
+                    "xhdpi" : "static/images/2.png",
+                    "xxhdpi" : "static/images/3.png"
+                },
+                "ios" : {
+                    "storyboard" : "",
+                    "iphone" : {
+                        "portrait-896h@3x" : "static/images/1242_2208.png",
+                        "landscape-896h@3x" : "static/images/2688_1242.png",
+                        "portrait-896h@2x" : "static/images/828_1792.png",
+                        "landscape-896h@2x" : "static/images/1792_828.png",
+                        "iphonexl" : "static/images/2435_1125.png",
+                        "retina55" : "static/images/1242_2208.png",
+                        "retina55l" : "static/images/2208_1242.png",
+                        "retina47" : "static/images/750_1134.png",
+                        "retina47l" : "static/images/1334_750.png",
+                        "retina40" : "static/images/640_1134.png",
+                        "retina40l" : "static/images/1136_640.png",
+                        "retina35" : "static/images/640_960.png"
+                    }
+                },
+                "useOriginalMsgbox" : false
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            }
+        }
+    },
+    /* 快应用特有相关 */
+    "quickapp" : {},
+    /* 小程序特有相关 */
+    "mp-weixin" : {
+        "appid" : "",
+        "setting" : {
+            "urlCheck" : false
+        },
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "你的位置信息将用于小程序位置接口的效果展示"
+            }
+        }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true
+    },
+    "mp-baidu" : {
+        "usingComponents" : true
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true
+    },
+    "uniStatistics" : {
+        "enable" : false
+    }
+}
